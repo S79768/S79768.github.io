@@ -7,7 +7,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Reset and Global Styles */
+        /* /* ... existing styles above ... */
+
+/* Card Sizing and Positioning */
+
+/* Card 1 (Profile): Large box */
+.card-profile {
+    grid-column: span 3;
+    grid-row: span 2;
+    justify-content: flex-start;
+    
+    /* --- NEW BACKGROUND IMAGE STYLES --- */
+    background-image: url('bg.jpg'); /* Set the image path */
+    background-size: cover;          /* Ensure the image covers the entire card */
+    background-position: center;     /* Center the image */
+    background-repeat: no-repeat;    /* Prevent the image from tiling */
+    
+    /* Optional: Add a subtle overlay to ensure text is readable */
+    position: relative;
+    color: white; /* Change text color if image is dark */
+    /* If you change the text color, you need to adjust .card-profile h1 and .social-links a later */
+}
+
+/* Optional: Overlay and Text Color Adjustments */
+.card-profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* 20% transparent black overlay */
+    border-radius: var(--border-radius);
+    z-index: 1;
+}
+
+.card-profile > div,
+.card-profile .social-links {
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.card-profile h1, 
+.card-profile p {
+    color: white; /* Ensure text is visible over the background */
+}
+
+.card-profile .accent-text {
+    color: #90E0EF; /* Lighter accent color for contrast */
+}
+
+.card-profile .social-links a {
+    color: #E0E0E0; /* Light grey for links */
+}
+.card-profile .social-links a:hover {
+    color: var(--color-accent); /* Keep original accent hover */
+}
+/* ... rest of the CSS ... */*/
         :root {
             /* Rule 4: Clean, Scientific, and Modern Color Palette */
             --color-background: #F8F9FA; /* Softest Grey/Off-White */
@@ -218,9 +273,9 @@
                 </div>
             </div>
             <div class="social-links">
-                <a href="https://github.com/s79768-cpu" target="_blank">LinkedIn</a>
-                <a href="https://github.com/s79768-cpu" target="_blank">GitHub</a>
-                <a href="https://github.com/s79768-cpu" target="_blank">UMT Portal</a>
+                <a href="https://github.com/S79768" target="_blank">LinkedIn</a>
+                <a href="https://github.com/S79768" target="_blank">GitHub</a>
+                <a href="https://github.com/S79768" target="_blank">UMT Portal</a>
                 <small>Connected & Ready to Learn</small>
             </div>
         </section>
